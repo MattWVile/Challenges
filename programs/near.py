@@ -8,4 +8,5 @@ def near(first_string, second_string):
             return True
         elif i == len(first_string):
             return False
-print(near(input('first string please '),input('second string please ')))
+if __name__ == "__main__": 
+    print(near(input('first string please '),input('second string please ')))
