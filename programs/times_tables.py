@@ -11,4 +11,5 @@ def times_table(num):
         else:
             print(result)
             total_count += 1
-print(times_table(input('number please ')))
+if __name__ == "__main__":
+    print(times_table(input('number please ')))
