@@ -1,22 +1,19 @@
 def even_in_between(start, end):
     if start < end:
-        i = int(start)
         result = []
         count = 0
-        while i != end:
-            i = list(str(i))
-            for number in i:
+        for num in range (int(start),int(end)+1):
+            num = list(str(num))
+            for number in num:
                 if int(number) % 2 == 0:
                     count += 1
-                    if count == len(i):
-                        result.append(int(''.join(i)))
+                    if count == len(num):
+                        result.append(''.join(num))
                         count = 0
                 else:
                     count = 0
-            i = int(''.join(i))
-            i += 1
         if len(result) >= 1:
-            return result
+            return ', '.join(result)
         else:
             return 'no double evens'
     else:
