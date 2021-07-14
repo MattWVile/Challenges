@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-{% for user in ["ben", "harry", "bob", "jay", "matt", "bill"] %}
+{% for user in users %}
 {% if user[:1] == 'b' %}
 <p>{{ user }}</p>
 {% endif %}
