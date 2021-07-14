@@ -25,12 +25,12 @@ def read():
         tasks_string += '<br>' + task.name
     return tasks_string
     
-# @app.route('/update/<description>')
-# def update(description):
-#     first_task = Tasks.query.first()
-#     first_task.desc = description 
-#     db.session.commit()
-#     return first_task.name + '<br>' + first_task.desc 
+@app.route('/update/<int:id>/<newdesc>')
+def update(id, newdesc):
+    first_task = Tasks.query.get(id)
+    first_task.desc = newdesc 
+    db.session.commit()
+    return redirect(url_for('home'))
 
 # @app.route('/completed/')
 # def isdone():
