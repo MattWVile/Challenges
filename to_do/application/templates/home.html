@@ -1,12 +1,17 @@
-<h1 style='color:darkorchid;'>To do list</h1>
 {% extends 'layout.html' %} 
 
 {% block body %}
     <br>
     {% for task in tasks %}
-        {{ "{0.id:0>3} | {0.name} | {done}".format(task, done='Tick' if task.done else 'Crossmark') }}
+        {{ task.id }} - {{ task.name }} - {{ "✔️" if task.done else "❌" }}
         <a href='{{ url_for("update", id=task.id) }}'>Update</a>
         <a href='{{ url_for("delete", id=task.id) }}'>Delete</a>
+        {% if task.done %}
+            <a href='{{ url_for("uncomplete", id=task.id) }}'>Uncomplete</a>
+        {% else %}
+            <a href='{{ url_for("complete", id=task.id) }}'>Complete</a>
+        {% endif %}
+
         <br>
     {% endfor %}
 

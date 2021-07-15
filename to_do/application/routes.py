@@ -52,6 +52,14 @@ def complete(id):
     db.session.commit()
     return redirect(url_for('home'))
 
+@app.route('/uncomplete/<int:id>')
+def uncomplete(id):
+    task = Tasks.query.get(id)
+    task.done = False
+    db.session.add(task)
+    db.session.commit()
+    return redirect(url_for('home'))
+
 @app.route('/delete/<int:id>')
 def delete(id):
     entry_to_del = Tasks.query.get(id)
