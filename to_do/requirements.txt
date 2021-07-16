@@ -1,0 +1,10 @@
+Flask==1.1.2
+Flask-SQLAlchemy==2.4.4
+SQLAlchemy==1.3.18
+pymysql
+flask-wtf
+wtforms
+flask-testing
+selenium
+pymysql 
+pytest

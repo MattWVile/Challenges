@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} 
+
+{% block body %}
+    <br>
+    {% for task in tasks %}
+        {{ task.id }} - {{ task.name }} - {{ "✔️" if task.done else "❌" }}
+        <a href='{{ url_for("update", id=task.id) }}'>Update</a>
+        <a href='{{ url_for("delete", id=task.id) }}'>Delete</a>
+        {% if task.done %}
+            <a href='{{ url_for("uncomplete", id=task.id) }}'>Uncomplete</a>
+        {% else %}
+            <a href='{{ url_for("complete", id=task.id) }}'>Complete</a>
+        {% endif %}
+
+        <br>
+    {% endfor %}
+
+{% endblock body %}

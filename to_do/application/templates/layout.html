@@ -1,0 +1,9 @@
+<body>
+    <h1 style='color:darkorchid;'>To do list</h1>
+    <div class='navbar'>
+        <a href='{{ url_for("home") }}'>Home</a>
+        <a href='{{ url_for("create") }}'>Create new</a>
+    </div>
+    {% block body %}
+    {% endblock body %}
+</body>
