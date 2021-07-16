@@ -67,15 +67,4 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('home'))
 
-@app.route('/completed')
-def completed():
-    all_tasks = Tasks.query.all()
-    tasks_string = ''
-    for task in all_tasks:
-        if task.done == True:
-            tasks_string += '<br>' + task.name + ' ' +  str(task.done)
-    if len(tasks_string) >= 1:  
-        return tasks_string
-    else:
-        return 'you lazy boi go complete tasks'
 
